@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+<script src="(link unavailable)" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<link href="(link unavailable)" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+{% block content %}
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-6">
+<div class="card">
+<div class="card-body">
+<h1 class="mt-4 mb-4">Create Book</h1>
+<form method="post" class="needs-validation" novalidate>
+{% csrf_token %}
+<div class="mb-3">
+<label for="title" class="form-label">{{ form.title.label_tag }}</label>
+<input type="text" class="form-control" id="title" name="title" required>
+<div class="invalid-feedback">Please enter a title.</div>
+</div>
+<div class="mb-3">
+<label for="author" class="form-label">{{ form.author.label_tag }}</label>
+<input type="text" class="form-control" id="author" name="author" required>
+<div class="invalid-feedback">Please enter an author.</div>
+</div>
+<div class="mb-3">
+<label for="year" class="form-label">{{ form.year.label_tag }}</label>
+<input type="number" class="form-control" id="year" name="year" required>
+<div class="invalid-feedback">Please enter a year.</div>
+</div>
+<div class="mb-3">
+<label for="genre" class="form-label">{{ form.genre.label_tag }}</label>
+<input type="text" class="form-control" id="genre" name="genre" required>
+<div class="invalid-feedback">Please enter a genre.</div>
+</div>
+<button type="submit" class="btn btn-primary">Create</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
